@@ -10,10 +10,10 @@ class SearchBar extends React.Component {
 
   onFormSubmit = (event) => {
     event.preventDefault();
-  //  this.setState({term: event.target.value})
-  //callback from patent component
+    this.props.onFormSubmit(this.state.term);
+    
   }
-  
+
   render(){
     return (
       <div className = "search-bar ui segment">
