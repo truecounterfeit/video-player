@@ -8,8 +8,6 @@ export default axios.create({
     part: 'snippet',
     maxResults: 5,
     key: KEY
-    
+
   }
 });
-
-// youtube.get('/search')
