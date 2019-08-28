@@ -4,6 +4,7 @@ import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
 import Header from './Header';
+import '../style/App.css'
 
 class App extends React.Component {
   state = {videos:[], selectedVideo: null};
@@ -31,7 +32,6 @@ class App extends React.Component {
 
   render() {
     return (
-      // <Header />
         <div className = "ui container">
           <SearchBar onFormSubmit={this.onTermSubmit} />
           <div className = 'ui grid'>

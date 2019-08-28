@@ -1,4 +1,5 @@
 import React from 'react';
+import '../style/SearchBar.css';
 
 class SearchBar extends React.Component {
   state = {term: ' '  };
@@ -27,6 +28,7 @@ class SearchBar extends React.Component {
               />
           </div>
         </form>
+        <button className ="ui button">Random</button>
       </div>
     );
   }
