@@ -6,7 +6,6 @@ class Header extends React.Component{
       <div className="ui center aligned header">
         <h1>Rabbit Hole</h1>
       </div>
-      // <button class="ui button">Random</button>
     )
   }
 }
