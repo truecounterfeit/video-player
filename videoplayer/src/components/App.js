@@ -28,26 +28,32 @@ class App extends React.Component {
 
   onVideoSelect = (video) => {
     this.setState({selectedVideo: video});
+    console.log(video);
   }
 
   render() {
     return (
-        <div className = "ui container">
-          <SearchBar onFormSubmit={this.onTermSubmit} />
-          <div className = 'ui grid'>
-            <div className = 'ui row'>
-              <div className = 'eleven wide column'>
-                <VideoDetail video={this.state.selectedVideo} />
-              </div>
-              <div className = 'five wide column'>
-                <VideoList
-                  onVideoSelect={this.onVideoSelect}
-                  videos={this.state.videos}
-                />
-              </div>
+      <div className= "ui-segment">
+        <Header />
+      <div className = "ui container">
+        <SearchBar
+          onSearchSubmit={this.onTermSubmit}
+          />
+        <div className = 'ui grid'>
+          <div className = 'ui row'>
+            <div className = 'eleven wide column'>
+              <VideoDetail video={this.state.selectedVideo} />
+            </div>
+            <div className = 'five wide column'>
+              <VideoList
+                onVideoSelect={this.onVideoSelect}
+                videos={this.state.videos}
+              />
             </div>
           </div>
         </div>
+      </div>
+    </div>
     );
   }
 
