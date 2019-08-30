@@ -1,6 +1,5 @@
 import React from 'react';
 import '../style/SearchBar.css';
-var randomWords = require('random-words');
 
 class SearchBar extends React.Component {
   state = {term: ' '  };
@@ -13,20 +12,16 @@ class SearchBar extends React.Component {
   onSearchSubmit = (event) => {
     event.preventDefault();
     this.props.onSearchSubmit(this.state.term);
-  }
-
-  onRandomSubmit = (event) => {
-    event.preventDefault();
-    this.props.onRandomSubmit(this.state.randomWords());
-    console.log(randomWords());
+    console.log(this.state.term);
   }
 
   render(){
     return (
+
       <div className = "search-bar ui segment">
         <form onSubmit={this.onSearchSubmit} className = "ui form">
           <div className = "field">
-            <button className ="ui button">Video Search</button>
+            <label> Video Search </label>
             <input
               type = "text"
               value = {this.state.term}
@@ -34,13 +29,8 @@ class SearchBar extends React.Component {
               />
           </div>
         </form>
-        <button
-          className = "ui button"
-          value = {this.state.term}
-          onClick = {this.onRandomSubmit}
-          >Random
-        </button>
       </div>
+
     );
   }
 }
